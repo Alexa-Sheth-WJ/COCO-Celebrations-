@@ -1,0 +1,128 @@
+{
+  "customer": "ampm / Thorntons, COCO Ops (company-operated stores)",
+  "widgetType": "Custom: Anniversary Recognition board",
+  "title": "COCO Celebrations",
+  "branding": {
+    "logos": [
+      {
+        "name": "ampm + Thorntons combined lockup (navy banner)",
+        "source": "Cropped from Screenshot_2026-10-23_at_3_10_06_PM.png",
+        "mime": "image/jpeg",
+        "dimensions": "940x170",
+        "encoding": "base64 inline"
+      }
+    ],
+    "primaryColor": "#5DA836",
+    "secondaryColor": "#193157",
+    "accentColors": {
+      "ok": {
+        "hex": "#F2BE45",
+        "meaning": "Milestone (gold)"
+      },
+      "warn": {
+        "hex": "#664593",
+        "meaning": "This week / Happy Anniversary (purple)"
+      },
+      "bad": {
+        "hex": "#7D8AA1",
+        "meaning": "Upcoming (grey)"
+      }
+    }
+  },
+  "content": {
+    "primaryMetric": {
+      "label": "Anniversaries this month",
+      "scope": "selected role"
+    },
+    "secondaryMetrics": [
+      "Next milestone (days until, with first name and years)",
+      "Celebrating this week (Sun-Sat, includes earlier days this week)",
+      "Longest tenured (name and completed years)"
+    ],
+    "roles": [
+      "Clean Team",
+      "Guest Service Reps",
+      "Store Managers",
+      "Food Service Managers",
+      "General Managers"
+    ],
+    "defaultList": "Anniversaries this month for the selected role, sorted by date, auto-scrolled to today; earlier days this month shown muted",
+    "search": "All 3,531 roster entries by name or manager name; results sorted by next anniversary; first 100 shown",
+    "statusStates": {
+      "Happy Anniversary!": "Anniversary date equals today (exact date only); purple chip with pulse dot; light confetti once per role per day",
+      "Milestone": "Years of service is 1, 5, 10, 15, 20, 25 or 30+; gold chip with sheen",
+      "Coming Up": "Future anniversary; purple when inside the current week, grey otherwise"
+    },
+    "anniversaryDate": "Continuous Service Date",
+    "leapDayRule": "Feb 29 anniversaries fall on Feb 28 in non-leap years",
+    "newHires": "Shown as Coming Up with 1 yr when their first anniversary falls in view; anniversaries under 1 year excluded",
+    "timeWindows": null,
+    "tone": "Friendly and celebratory"
+  },
+  "data": {
+    "primaryParam": null,
+    "primaryParamNote": "Deferred; roster has no employee or location IDs. Widget shows the same view to everyone.",
+    "exampleValue": null,
+    "workjamVariablesUsed": [
+      "aspectRatio"
+    ],
+    "workjamVariablesRead": [
+      "externalLocationId",
+      "externalLocationCode",
+      "address",
+      "city",
+      "stateOrProvince",
+      "country",
+      "zipCode",
+      "externalRegionId",
+      "externalRegionCode",
+      "employeeId",
+      "employeeCode",
+      "username",
+      "language",
+      "aspectRatio"
+    ],
+    "customVariables": [],
+    "dataSource": {
+      "type": "embedded static snapshot",
+      "file": "COCO_Ops_Team_Members_Expanded.xlsx",
+      "records": 3531,
+      "uniquePeople": 3525,
+      "fieldsEmbedded": [
+        "Full Name",
+        "Continuous Service Date",
+        "Manager Name",
+        "Job Title (only when it differs from the role's base title)"
+      ],
+      "snapshotDate": "2026-10-23",
+      "refresh": "Rebuild the HTML when the roster changes",
+      "hosting": "Contains employee names and service dates: host only on a private, access-controlled location"
+    },
+    "refreshMs": 1000,
+    "refreshNote": "1-second tick re-renders on calendar-day rollover; no network calls"
+  },
+  "display": {
+    "defaultAspectRatio": "fill",
+    "sizing": "With no aspectRatio param (or aspectRatio=fill) the widget fills 100% of the iframe width and height and adapts as it resizes. A named ratio draws the largest box of that shape that fits the iframe, centered.",
+    "supportedAspectRatios": {
+      "fill": "iframe size",
+      "standard": "4 / 3",
+      "square": "1 / 1",
+      "landscape": "16 / 9",
+      "portrait": "9 / 16"
+    },
+    "renderingContext": "Any: phone tile, tablet, desktop, kiosk or lobby screen",
+    "layoutTiers": {
+      "under 400px wide": "single column, stats stacked (shown only when 480px+ tall)",
+      "400-699px wide": "single-column list, 3-up stats strip",
+      "700px+ wide": "hero and stats side by side, multi-column list",
+      "1100px+ wide and 600px+ tall": "larger type for desktop and kiosk",
+      "1600px+ wide and 860px+ tall": "lobby-screen type scale"
+    },
+    "compactRules": "Stats hide below 380px tall; hero hides below 300px tall and its count moves into the header; search hides below 190px tall"
+  },
+  "fileSizeKB": 133.8,
+  "fileSizeNote": "Under the 150 KB target: roster packed (base-36 dates, indexed managers and titles) at about 99 KB, logo about 31 KB",
+  "version": "1.1.0",
+  "builtOn": "2026-10-23"
+}
